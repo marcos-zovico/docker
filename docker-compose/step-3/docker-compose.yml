@@ -2,8 +2,12 @@ version: '3'
 
 services: 
   phpapp:
-    image: php:7.2-apache 
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: phpapp:123 
     ports: 
       - "8080:80"
     volumes: 
       - "./:/var/www/html"
+    container_name: my-php-app
